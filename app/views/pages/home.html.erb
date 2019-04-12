@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Bienvenue !</h1>
+<%
+    @joueurs.each do |j|%>
+       <p><% j.each do |i|%>
+            <p><%= i %></p>
+<%  
+        end%></p><br><%
+    end 
+%>
