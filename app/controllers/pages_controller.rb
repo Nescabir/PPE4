@@ -8,7 +8,10 @@ class PagesController < ApplicationController
 
   def home
 
-    getJoueursMethod()
+  end
+
+  def login
+
   end
 
   def getJoueursMethod

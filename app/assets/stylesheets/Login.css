@@ -1,0 +1,40 @@
+.LoginForm{
+    display: block;
+    width: 30%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 35%;
+    margin-top: 10%;
+    padding: 0 5% 2% 5%;
+    border: 3px solid #191919;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #323232;
+}
+.LoginForm .formInputs{
+    color: #a1a1a1;
+    text-align: left;
+}
+.LoginForm .formButton{
+    margin-top: 10%;
+}
+.LoginForm input {
+    width: 100%;
+    background-color: #323232;
+    border: none;
+    border-bottom: 2px solid #191919;
+    color: #a1a1a1;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.LoginForm input:focus{
+    border-bottom: 2px solid darkorange;
+}
+.LoginForm input:hover{
+    border-bottom: 2px solid rgba(255,140,0, 0.5);
+}
