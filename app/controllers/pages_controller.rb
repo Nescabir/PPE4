@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   require "httparty"
 
-  getToken = HTTParty.get('http://193.70.0.15:8080/tokens/log/technicien/technicien2018*')
+  getToken = HTTParty.get('http://api.egcorp.tk/tokens/log/technicien/technicien2018*')
   token = JSON.parse getToken.body
   token = token['token']
   $bearerToken = 'Bearer ' + token
@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   end
 
   def getJoueursMethod
-    getJoueurs = HTTParty.get('http://193.70.0.15:8080/joueurs', :headers => {
+    getJoueurs = HTTParty.get('http://api.egcorp.tk/joueurs', :headers => {
       "Authorization" => $bearerToken
     })
     @joueurs = JSON.parse getJoueurs.body
