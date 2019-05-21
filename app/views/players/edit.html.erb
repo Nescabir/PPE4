@@ -1,0 +1,38 @@
+<% title "Édition de " + @infojoueur['pseudo'] %>
+<div class="sidebar">
+    <div class="users">
+        <% @players.each do |player| %>
+            <a class="user" href="<%= players_path %>/<%= player['idjoueur'] %>"><%= player['pseudo'] %></a>
+        <% end %>
+    </div>
+    <div class="actions">
+        <a href="<%= new_player_path %>" class="action-button"><%= fa_icon "user-plus"%> Ajouter un joueur</a>
+    </div>
+</div>
+<div class="content-wrapper">
+    <div class="content-inner">
+        <%= form_with scope: :player, url: player_path, method: "patch", local: true do |form| %>
+            <div class=header>
+                édition de <%= @infojoueur['pseudo'] %>
+            </div>
+            <div class="content">
+                <div><%= form.label :username, :Pseudo %></div>
+                <div><%= form.text_field :username, value: @infojoueur['pseudo'] %></div>
+                <div><%= form.label :password, :"Mot de passe" %></div>
+                <div><%= form.text_field :password, value: @infojoueur['motdepasse'] %></div>
+                <div><%= form.label :lastname, :Nom %></div>
+                <div><%= form.text_field :lastname, value: @infojoueur['nom'] %></div>
+                <div><%= form.label :firstname, :Prénom %></div>
+                <div><%= form.text_field :firstname, value: @infojoueur['prenom'] %></div>
+                <div><%= form.label :birthday, :"Date de naissance" %></div>
+                <div><%= form.date_field :birthday, value: @datenaissance.strftime('%F') %></div>
+                <div><%= form.label :phone, :"N° de téléphone" %></div>
+                <div><%= form.phone_field :phone, value: @infojoueur['numerotelephone'] %></div>
+            </div>
+            <div class="actions-2">
+                <%= form.submit :Enregistrer %>
+                <%= link_to "Annuler", player_path%>
+            </div>
+        <% end %>
+    </div>
+</div>

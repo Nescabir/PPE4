@@ -1,0 +1,45 @@
+<% title @infojoueur['pseudo'] %>
+<div class="sidebar">
+    <div class="users">
+        <% @players.each do |player| %>
+            <a class="user" href="<%= players_path %>/<%= player['idjoueur'] %>"><%= player['pseudo'] %></a>
+        <% end %>
+    </div>
+    <div class="actions">
+        <a href="<%= new_player_path %>" class="action-button"><%= fa_icon "user-plus"%> Ajouter un joueur</a>
+    </div>
+</div>
+<div class="content-wrapper">
+    <div class="content-inner">
+        <div class="header">
+            <%= @infojoueur['pseudo'] %>
+        </div>
+        <div class="content">
+            <%
+                datenaissance = DateTime.strptime(@infojoueur['datenaissance'], '%Y-%m-%dT%H:%M:%S%z').strftime('%D %T')
+                datecreation = DateTime.strptime(@infojoueur['datecreation'], '%Y-%m-%dT%H:%M:%S%z').strftime('%D %T')
+                telephone = joli_tel(@infojoueur['numerotelephone'],'.')
+            %>
+            <div>ID:</div><div><%= @infojoueur['idjoueur'] %></div>
+            <div>Pseudo:</div><div><%= @infojoueur['pseudo'] %></div>
+            <div>Mot de passe:</div><div><%= @infojoueur['motdepasse'] %></div>
+            <div>Nom:</div><div><%= @infojoueur['nom'] %></div>
+            <div>Prénom:</div><div><%= @infojoueur['prenom'] %></div>
+            <div>Date de naissance:</div><div><%= datenaissance %></div>
+            <div>Date de création:</div><div><%= datecreation %></div>
+            <div>N° de téléphone:</div><div><%= telephone %></div>
+            <div>Nombre de parties:</div><div><%= @infojoueur['nombreparties'] %></div>
+            <div>Solde:</div>
+            <% if @soldeOperations > 0%>
+                <div class="sup"><%= @soldeOperations %></div>
+            <% else %>
+                <div class="inf"><%= @soldeOperations %></div>
+            <% end %>
+        </div>
+        <div class="actions">
+            <%= link_to 'Voir les opérations', player_operations_path(@infojoueur['idjoueur']) %>
+            <a href="<%= edit_player_path %>"><%= fa_icon "edit" %> Editer</a>
+            <a href="<%= player_path %>" data-confirm="Êtes-vous sur de vouloir archiver ce joueur?" rel="nofollow" data-method="delete"><%= fa_icon "archive" %> Archiver</a>
+        </div>
+    </div>
+</div>

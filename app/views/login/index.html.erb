@@ -1,0 +1,18 @@
+<% title "Connexion" %>
+<div class="LoginFormContainer">
+    <div class="LoginForm">
+        <img src="<%= asset_path 'Logo transparent.png' %>" width="200" height="200" alt="EGC Logo"/>
+        <%= form_with scope: :login, method: "sign" , local: true do |form| %>
+            <div class="formInputs">
+                <%= form.text_field :username, :placeholder => "Identifiant", :required => "true" %>
+                <%= form.password_field :password, :placeholder => "Mot de passe", :required => "true" %>
+            </div>
+
+            <div class="message">
+                <p><%= $message %></p>
+            </div>
+            
+            <%= form.submit :"Se connecter", :class => "formButton" %>
+        <% end %> 
+    </div>
+</div>

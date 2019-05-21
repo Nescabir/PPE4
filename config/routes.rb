@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get  'login' => 'pages#login'
-  get  'home' => 'pages#home'
+  resources :login
 
-  root 'pages#login'
+  resources :players do
+    resources :operations
+  end
+
+  root 'login#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -11,12 +11,6 @@
   </head>
 
   <body>
-    <div class="app">
-      <div class="header">
-          <%= link_to fa_icon("sign-out") + " Se déconnecter", login_path(0), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir vous déconnecter?' } %>
-          <a href="<%= players_path %>"><img src="<%= asset_path("Logo transparent.png") %>" alt="Logo EGC" class="logo"/></a>
-      </div>
       <%= yield %>
-    </div>
   </body>
 </html>
