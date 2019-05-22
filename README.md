@@ -1,24 +1,14 @@
-# README
+# Avertissement
+**Ce projet est un de mes premiers projets réalisés.**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Projet Personnalisé Encadré 4
+Projet personnalisé encadré 4 ou PPE4 est un projet que j'ai dû réaliser durant ma formation BTS Services Informatiques aux Organisations.
 
-Things you may want to cover:
+Nous devions réaliser, en équipe de 3 développeurs, développer chacun une application différente pour une entreprise d'Escape Game factice. 
+J'ai du créer l'application web backoffice permettant de gérer les joueurs ainsi que leurs transactions
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Ce que j'ai appris
+* Récupération et envoi de données via une API REST
+* Ruby
+* Ruby on Rails
+* Modèle MVC
