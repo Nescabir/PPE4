@@ -12,3 +12,5 @@ J'ai du créer l'application web backoffice permettant de gérer les joueurs ain
 * Ruby
 * Ruby on Rails
 * Modèle MVC
+
+[Demo](https://ppe4.blgn.dev/)
